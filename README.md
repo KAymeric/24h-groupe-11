@@ -1,6 +1,6 @@
 # hack48H
 
-## Install Express
+## Install dependency
 
 ```bash
 npm i
