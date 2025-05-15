@@ -7,13 +7,13 @@ npm install express
 ```
 ## Manager (variable, cors, morgan(logger les requetes)) 
 
-``bash
+```bash
 npm install dotenv cors morgan
 ```
 
 # startserver 
 
-``bash
+```bash
 npm run dev
- ```
+```
 
