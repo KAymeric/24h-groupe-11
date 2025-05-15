@@ -1,16 +1,17 @@
-#hack48H
+# hack48H
 
-##Install Express
+## Install Express
 
 ```bash
 npm install express
 ```
-Manager (variable, cors, morgan(logger les requetes)) 
+## Manager (variable, cors, morgan(logger les requetes)) 
 
 ``bash
 npm install dotenv cors morgan
 ```
-start server 
+
+# startserver 
 
 ``bash
 npm run dev
