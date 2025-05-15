@@ -3,14 +3,8 @@
 ## Install Express
 
 ```bash
-npm install express
+npm i
 ```
-## Manager (variable, cors, morgan(logger les requetes)) 
-
-```bash
-npm install dotenv cors morgan
-```
-
 # startserver 
 
 ```bash
