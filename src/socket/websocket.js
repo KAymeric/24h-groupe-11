@@ -1,12 +1,16 @@
 const io = require('socket.io');
 
 function createWebsocket(server){
-    const socket = io(server)
+    const socket = io(server, {
+        cors: {
+            origin: "*",
+            methods: ["GET", "POST"]
+        }
+    })
 
     socket.on('connection', (soc) => {
-        console.log('user connected');
-        soc.on('disconnect', function () {
-            console.log('user disconnected');
+        soc.on('message', function (msg) {
+            socket.emit('message', msg);
         });
     })
 }
