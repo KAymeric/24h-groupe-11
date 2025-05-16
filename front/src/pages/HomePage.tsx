@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { AlertTriangle, Shield, MapPin, Users, Megaphone } from 'lucide-react';
 import { useAlertContext } from '../context/AlertContext';

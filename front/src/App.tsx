@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
@@ -8,6 +9,9 @@ import MapPage from './pages/MapPage';
 import ChatPage from './pages/ChatPage';
 import ActivitiesPage from './pages/ActivitiesPage';
 import ResourcesPage from './pages/ResourcesPage';
+import SigninPage  from './pages/signinPage';
+import SignupPage from './pages/signupPage';
+
 import { AlertProvider } from './context/AlertContext';
 
 function App() {
@@ -24,6 +28,8 @@ function App() {
               <Route path="/chat" element={<ChatPage />} />
               <Route path="/activities" element={<ActivitiesPage />} />
               <Route path="/resources" element={<ResourcesPage />} />
+              <Route path="/signin" element={<SigninPage />} />
+              <Route path="/signup" element={<SignupPage />} />
             </Routes>
           </main>
           <Footer />
