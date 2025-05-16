@@ -1,4 +1,5 @@
 const mysql = require('mssql');
+const migration = require('./migration.js');
 
 let db = mysql.connect({
     server: "bddchallenge48h.database.windows.net",
@@ -13,8 +14,9 @@ let db = mysql.connect({
         encrypt: true
     }
 })
-.then(() => {
+.then((connexion) => {
     console.log("Connected to the database!");
+    migration.createDatabase(connexion);
 });
 
 
