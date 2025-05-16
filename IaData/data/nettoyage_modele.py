@@ -21,7 +21,7 @@ warnings.filterwarnings('ignore')
 # 1. Import et Nettoyage des données
 # ============================
 
-fichier = os.path.join(os.path.dirname(__file__), 'data\catastrophes_naturelles.xlsx')
+fichier = os.path.join(os.path.dirname(__file__), 'catastrophes_naturelles.xlsx')
 df = pd.read_excel(fichier, header=None)
 
 lignes_corrigees = []
@@ -151,6 +151,6 @@ pred = best_model.predict(X_input)
 print("Prédiction [séisme, inondation] :", pred[0])
 
 # Sauvegarde du modèle, du scaler et du PCA
-joblib.dump(best_model, "modele_mlp.joblib")
-joblib.dump(scaler, "scaler.joblib")
-joblib.dump(pca, "pca.joblib")
+joblib.dump(best_model, "IaData/api/modele_mlp.joblib")
+joblib.dump(scaler, "IaData/api/scaler.joblib")
+joblib.dump(pca, "IaData/api/pca.joblib")
