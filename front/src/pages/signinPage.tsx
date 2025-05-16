@@ -83,7 +83,7 @@ const SigninPage = () => {
         <div style={styles.footer}>
           <p>
             Pas encore inscrit ?{" "}
-            <a href="/signin" style={styles.link}>
+            <a href="/signup" style={styles.link}>
               Créer un compte
             </a>
           </p>
