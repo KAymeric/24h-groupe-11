@@ -53,7 +53,7 @@ const ChatPage = () => {
   };
 
   socket.on('message', (message: ChatMessage) => {
-    if message.userId === userId.toString()) return; // Ignore own messages
+    if (message.userId === userId.toString()) return; // Ignore own messages
     message.timestamp = new Date();
     setMessages(prevMessages => [...prevMessages, message]);
   });
