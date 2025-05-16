@@ -13,7 +13,7 @@ const ChatPage = () => {
   const [selectedZone, setSelectedZone] = useState('zone1'); // Default to first zone
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const socket = io('http://localhost:5180');
-  const userId = Math.random();
+  const [userId, setUserId] = useState(Math.random().toString());
   
   
   // Auto-scroll to bottom when new messages arrive
@@ -31,7 +31,7 @@ const ChatPage = () => {
     
     const newMsg: ChatMessage = {
       id: `user-${Date.now()}`,
-      userId: userId.toString(),
+      userId: userId,
       userName: 'Vous',
       zoneId: selectedZone,
       content: newMessage.trim(),
@@ -53,9 +53,11 @@ const ChatPage = () => {
   };
 
   socket.on('message', (message: ChatMessage) => {
-    if message.userId === userId.toString()) return; // Ignore own messages
+    if (message.userId === userId.toString()) return; // Ignore own messages
     message.timestamp = new Date();
-    setMessages(prevMessages => [...prevMessages, message]);
+    console.log('New message received:', message);
+    
+    setMessages([...messages, message]);
   });
 
   return (
@@ -146,7 +148,7 @@ const ChatPage = () => {
                     <div className={`max-w-[80%] rounded-lg p-3 ${
                       message.isOfficial 
                         ? 'bg-blue-50 border border-blue-200' 
-                        : message.userId === 'current-user'
+                        : message.userId === userId.toString()
                           ? 'bg-blue-500 text-white'
                           : 'bg-gray-100'
                     }`}>
