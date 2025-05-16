@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SigninPage = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -33,12 +35,8 @@ const SigninPage = () => {
       setEmail("");
       setPassword("");
       setSuccess("Connexion réussie!");
+      navigate("/");
       
-      
-      if (data.token) {
-        localStorage.setItem("authToken", data.token);
-        window.location.href = "/dashboard";
-      }
     } catch (err) {
       setError(err.message || "Une erreur s'est produite");
     } finally {
